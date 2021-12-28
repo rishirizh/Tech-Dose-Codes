@@ -1,0 +1,18 @@
+// X^Y in log(Y) time
+class Main{
+    public static void main(String[] args) {
+        int base = 2;
+        int exponent = 3;
+        long res=1;
+        while (exponent>0){
+            if ((exponent&1)==1)
+                res*=base;
+            
+            exponent/=2;
+            base*=base;
+            
+        }
+        System.out.println(res);
+
+    }
+}
