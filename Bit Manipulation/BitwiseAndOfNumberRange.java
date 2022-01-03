@@ -11,7 +11,7 @@ class Solution {
             right>>=1;
             c++;
         }
-        int n = left&right;
-        return n<<=c;
+        //int n = left&right;
+        return right<<=c;
     }
 }
