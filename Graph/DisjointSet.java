@@ -15,6 +15,13 @@ public class DisjointSet {
         if (findParent(arr,from)!=findParent(arr, to) || (arr[from]==-1 && arr[to]==-1))
                 arr[from] = to;
     }
+    static boolean isCyclic(int[] arr,int x,int y){
+        int parent1 = findParent(arr, x);
+        int parent2 = findParent(arr, y);
+        if (parent1==parent2 && parent1!=-1 && parent2!=-1)
+            return true;
+        return false;
+    }
     public static void main(String[] args) {
         //  Nodes 0 to 3
         //          1
@@ -35,6 +42,7 @@ public class DisjointSet {
             to = sc.nextInt();
             // addEdge(arr, from, to);
             union(arr, from, to);
+            isCyclic(arr, from, to);
             
         }
         System.out.println(Arrays.toString(arr));
